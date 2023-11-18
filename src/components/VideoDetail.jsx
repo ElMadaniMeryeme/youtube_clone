@@ -2,8 +2,7 @@ import { useState, useEffect } from "react"
 import { Link, useParams } from 'react-router-dom'
 import ReactPlayer from "react-player"
 import { Typography, Box, Stack } from "@mui/material"
-import { CheckCircle } from "@mui/icons-material"
-import { Video, Videos } from './'
+import { Videos } from './'
 import { fetchFromAPI } from "../utils/fetchFromAPI"
 
 const VideoDetail = () => {
@@ -21,7 +20,7 @@ const VideoDetail = () => {
 
   if(!videoDetail?.snippet) return 'Loading...'
 
-  const { snippet: { title, channelId, channelTitle }, statistic: { viewContent, likeCount } } = videoDetail;
+  const { snippet: { title, channelId, channelTitle }, statistic: { viewCount, likeCount } } = videoDetail;
 
   return (
     <Box minHeight='95vh'>
